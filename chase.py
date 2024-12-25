@@ -18,37 +18,37 @@ while True:
 			if event.key == pygame.K_ESCAPE:
 				pygame.quit()
 			elif event.key == pygame.K_LEFT:
-				x -= 2
+				x -= 5
 			elif event.key == pygame.K_RIGHT:
-				x += 2
+				x += 5
 			elif event.key == pygame.K_UP:
-				y -= 2
+				y -= 5
 			elif event.key == pygame.K_DOWN:
-				y += 2
+				y += 5
 			
 	pygame.draw.rect(screen,(0,0,0),(0,0,700,700))
 	pygame.draw.circle(screen,(0,255,0),(x,y),10)
 	
 	if ((x > z1) and (y < z2)):
-		z1 += 2
-		z2 -= 2
+		z1 += 0.1
+		z2 -= 0.1
 	elif ((x < z1) and (y < z2)):
-		z1 -= 2
-		z2 -= 2
+		z1 -= 0.1
+		z2 -= 0.1
 	elif ((x > z1) and (y > z2)):
-		z1 += 2
-		z2 += 2
+		z1 += 0.1
+		z2 += 0.1
 	elif ((x == z1) and (y > z2)):
-		z2 += 2
+		z2 += 0.1
 	elif ((y == z2) and (x < z1)):
-		z1 -= 2
+		z1 -= 0.1
 	elif ((y == z2) and (x > z1)):
-		z1 += 2
+		z1 += 0.1
 	elif ((x == z1) and (y < z2)):
-		z2 -= 2
+		z2 -= 0.1
 	else:
-		z1 -= 2
-		z2 += 2	
+		z1 -= 0.1
+		z2 += 0.1	
 	pygame.draw.circle(screen,(255,0,0),(z1,z2),10)
 	
 	if (x==z1 and y==z2):
